@@ -1,3 +1,8 @@
+# Description: Created Child Blog App
+
+Created a blog where user can add title, image and content about their child.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
