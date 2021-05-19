@@ -42,7 +42,7 @@ function SearchPage() {
 
       return loadedBlogs.filter((blog) => {
         const blogTitle = blog.title.toLowerCase();
-        return blogTitle.includes(query);
+        return blogTitle.includes(query.toLowerCase());
       });
     };
 
