@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
 import BlogEntryList from '../components/blogentry/BlogEntryList';
-
+import Searchbar from "../components/search/Searchbar";
 
 function AllBlogsPage() {
 const [isLoading, setIsLoading] = useState(true);
 const [loadedBlogs, setLoadedBlogs] = useState([]);
+const { search } = window.location;
+  const query = new URLSearchParams(search).get("s");
+  const [searchQuery, setSearchQuery] = useState(query || "");
+  const [newBlogs, setNewBlogs] = useState([]);
 
 useEffect(() => {
   setIsLoading(true);
@@ -27,7 +31,21 @@ useEffect(() => {
   });
 }, []);
 
-  
+useEffect(() => {
+  const filterBlogs = (loadedBlogs, query) => {
+    if (!query) {
+      return loadedBlogs;
+    }
+
+    return loadedBlogs.filter((blog) => {
+      const blogTitle = blog.title.toLowerCase();
+      return blogTitle.includes(query.toLowerCase());
+    });
+  };
+
+  const filteredBlogs = filterBlogs(loadedBlogs, searchQuery);
+  setNewBlogs(filteredBlogs);
+}, [loadedBlogs, searchQuery]);
 
   if (isLoading) {
     return (
@@ -40,7 +58,8 @@ useEffect(() => {
   return (
     <section>
       <h1>All Blogs Page</h1>
-     <BlogEntryList blogentries={loadedBlogs}/>
+      <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+     <BlogEntryList blogentries={newBlogs}/>
     </section>
   );
 }

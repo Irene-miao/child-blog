@@ -25,9 +25,6 @@ const favoritesCtx = useContext(FavoritesContext);
               <span className={classes.badge}>{favoritesCtx.totalFavorites}</span>
               </Link>
               </li>
-              <li>
-            <Link to="/search">Search Blog</Link>
-          </li>
         </ul>
       </nav>
     </header>

@@ -2,7 +2,7 @@ import classes from "./Search.module.css";
 
 
 const SearchBar = ({ searchQuery, setSearchQuery }) => (
-<form action="/" method="get">
+<form className={classes.form} action="/" method="get">
     <label htmlFor="header-search">
         <span className={classes.hidden}>Search Blog</span>
     </label>
@@ -15,8 +15,10 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => (
     placeholder="Type title.."
     name="s"
     />
-    <div className={classes.actions} >
-    <button type="submit">Search</button>
+    <div className={classes.actions}>
+    <button type="submit">
+      Search
+        </button>
     </div>
 </form>
 );
