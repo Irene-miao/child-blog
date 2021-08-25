@@ -1,7 +1,7 @@
 # Description: Created Child Blog App
 
 Created a blog where user can add title, image and content about their child.
-
+Published at: https://irene-miao.github.io/child-blog/
 
 ## Getting Started with Create React App
 
