@@ -1,29 +1,31 @@
-import { useRef } from 'react';
-import Card from '../ui/Card';
-import classes from './NewBlogEntryForm.module.css';
+import React from "react"
+import { useRef } from "react"
+import Card from "../ui/Card"
+import classes from "./NewBlogEntryForm.module.css"
 
 function AddBlogEntryForm(props) {
-const titleInputRef = useRef();
-const imageInputRef = useRef();
-const descriptionInputRef = useRef();
+  const titleInputRef = useRef()
+  const imageInputRef = useRef()
+  const descriptionInputRef = useRef()
 
 
-    function submitHandler(event) {
-        event.preventDefault();
+  function submitHandler(event) {
+    event.preventDefault()
 
-        const enteredTitle = titleInputRef.current.value;
-        const enteredImage = imageInputRef.current.value;
-        const enteredDescription = descriptionInputRef.current.value;
+    const enteredTitle = titleInputRef.current.value
+    const enteredImage = imageInputRef.current.value
+    const enteredDescription = descriptionInputRef.current.value
 
-        const blogentryData = {
-            title: enteredTitle,
-            image: enteredImage,
-            description: enteredDescription,
-        };
-
-        props.onAddBlogentry(blogentryData);
-
+    const blogentryData = {
+      title: enteredTitle,
+      image: enteredImage,
+      description: enteredDescription,
     }
+
+    // eslint-disable-next-line react/prop-types
+    props.onAddBlogentry(blogentryData)
+
+  }
   return (
     <Card>
       <form className={classes.form} onSubmit={submitHandler}>
@@ -44,7 +46,7 @@ const descriptionInputRef = useRef();
         </div>
       </form>
     </Card>
-  );
+  )
 }
 
-export default AddBlogEntryForm;
+export default AddBlogEntryForm

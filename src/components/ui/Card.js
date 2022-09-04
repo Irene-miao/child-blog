@@ -1,9 +1,11 @@
-import classes from './Card.module.css';
+/* eslint-disable react/prop-types */
+import React from "react"
+import classes from "./Card.module.css"
 
 function Card(props) {
-    return <div className={classes.card}>
-        {props.children}
-    </div>
+  return <div className={classes.card}>
+    {props.children}
+  </div>
 }
 
-export default Card;
+export default Card

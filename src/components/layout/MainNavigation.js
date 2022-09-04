@@ -1,11 +1,12 @@
-import {useContext} from 'react';
-import { Link } from "react-router-dom";
-import classes from "./MainNavigation.module.css";
-import FavoritesContext from '../../store/favorites-context';
+import React from "react"
+import { useContext } from "react"
+import { Link } from "react-router-dom"
+import classes from "./MainNavigation.module.css"
+import FavoritesContext from "../../store/favorites-context"
 
 
 function MainNavigation() {
-const favoritesCtx = useContext(FavoritesContext);
+  const favoritesCtx = useContext(FavoritesContext)
 
 
   return (
@@ -21,14 +22,14 @@ const favoritesCtx = useContext(FavoritesContext);
           </li>
           <li>
             <Link to="/favorites">
-              Favorite Blog 
+              Favorite Blog
               <span className={classes.badge}>{favoritesCtx.totalFavorites}</span>
-              </Link>
-              </li>
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
-  );
+  )
 }
 
-export default MainNavigation;
+export default MainNavigation

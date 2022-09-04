@@ -1,16 +1,18 @@
-import MainNavigation from './MainNavigation';
-import classes from './Layout.module.css';
+/* eslint-disable react/prop-types */
+import React from "react"
+import MainNavigation from "./MainNavigation"
+import classes from "./Layout.module.css"
 
 
 function Layout(props) {
- return (
- <div>
-     <MainNavigation />
-     <main className={classes.main}>
-{props.children}
-     </main>
- </div>
- );
+  return (
+    <div>
+      <MainNavigation />
+      <main className={classes.main}>
+        {props.children}
+      </main>
+    </div>
+  )
 }
 
-export default Layout;
+export default Layout
