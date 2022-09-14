@@ -1,9 +1,9 @@
 import React from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import NewBlogEntryForm from "../components/blogentry/NewBlogEntryForm"
 
 function AddBlogPage() {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   function addBlogEntryHandler(blogentryData) {
     fetch("https://childblogapp-default-rtdb.asia-southeast1.firebasedatabase.app/blogentries.json",
@@ -15,7 +15,7 @@ function AddBlogPage() {
         }
       }
     ).then(() => {
-      history.replace("/")
+      navigate("/")
     })
   }
 

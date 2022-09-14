@@ -1,5 +1,5 @@
 import React from "react"
-import { Route, Switch } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import AllBlogsPage from "./pages/AllBlogs"
 import FavoritesPage from "./pages/Favorites"
 import AddBlogPage from "./pages/AddBlog"
@@ -9,17 +9,14 @@ import Layout from "./components/layout/Layout"
 function App() {
   return (
     <Layout>
-      <Switch>
-        <Route path='/' exact>
-          <AllBlogsPage />
+      <Routes>
+        <Route exact path='/' element={<AllBlogsPage />}>
         </Route>
-        <Route path='/add-blog'>
-          <AddBlogPage />
+        <Route exact path='/add-blog' element={<AddBlogPage />}>
         </Route>
-        <Route path='/favorites'>
-          <FavoritesPage />
+        <Route  exact path='/favorites' element={<FavoritesPage />}>
         </Route>
-      </Switch>
+      </Routes>
     </Layout>
   )
 }

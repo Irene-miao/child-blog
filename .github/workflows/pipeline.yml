@@ -1,0 +1,21 @@
+name: Deployment pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  simple_deployment_pipeline:
+    runs-on: unbuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          node-version: '16'
+      - name: npm install
+        run: npm install
+      - name: lint
+        run: npm run lint
+      - name: lint fix
+        run: npm run lint:fix
+        

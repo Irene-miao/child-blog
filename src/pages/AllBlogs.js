@@ -55,6 +55,7 @@ function AllBlogsPage() {
       </section>
     )
   }
+  console.log(newBlogs)
 
   return (
     <section>
