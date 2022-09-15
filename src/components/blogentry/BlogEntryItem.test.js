@@ -27,8 +27,10 @@ describe("Button Component", () => {
 
     const button = screen.getByTestId("button")
 
+
     expect(button).toBeInTheDocument()
     expect(button).toHaveTextContent("Favorite")
+
   })
 
 

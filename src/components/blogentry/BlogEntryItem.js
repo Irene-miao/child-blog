@@ -38,7 +38,7 @@ function BlogEntryItem(props) {
           <p>{props.description}</p>
         </div>
         <div className={classes.actions}>
-          <button  data-testid="button"  onClick={toggleFavoriteStatusHandler}>
+          <button id="button" data-testid="button"  onClick={toggleFavoriteStatusHandler}>
             {itemIsFavorite ? "UnFavorite" : "Favorite"}
           </button>
         </div>

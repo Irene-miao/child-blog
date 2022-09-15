@@ -24,7 +24,9 @@
     "test": "jest",
     "eject": "react-scripts eject",
     "lint": "eslint .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "cypress:open": "cypress open",
+    "test:e2e": "cypress run"
   },
   "eslintConfig": {
     "extends": [
@@ -53,7 +55,9 @@
     "babel-jest": "^29.0.2",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "cypress": "^10.8.0",
     "eslint": "^8.23.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-jest": "^27.0.1",
     "eslint-plugin-react": "^7.31.7",
     "html-webpack-plugin": "^5.5.0",

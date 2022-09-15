@@ -18,7 +18,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => (
       name="s"
     />
     <div className={classes.actions}>
-      <button type="submit">
+      <button id="search" type="submit">
       Search
       </button>
     </div>
