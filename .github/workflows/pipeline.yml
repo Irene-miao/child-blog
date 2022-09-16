@@ -56,9 +56,10 @@ jobs:
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
     steps:
-      uses: actions/checkout@v3
-      with:
-        node-version: '16'
+      - name: Get repository
+        uses: actions/checkout@v3
+        with:
+          node-version: '16'
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@38e273cbdda80759cc0232a36f559999f4e47d29
         env: 
