@@ -10,7 +10,7 @@ on:
 
 jobs:
   simple_deployment_pipeline:
-    if: ${{ github.event_name == "push" }} 
+    if: ${{ github.event_name == "push" && !contains(join(github.event.commits.*.message, ','), '#skip')}} 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -37,4 +37,14 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
+  tag_release:
+    if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ','), '#skip')}}
+    needs: [simple_deployment_pipeline]
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.40.0
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: true
 
